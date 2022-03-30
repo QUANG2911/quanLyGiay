@@ -1,0 +1,105 @@
+﻿@model quanLyGiay.Models.ProductCategory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <strong class="text-uppercase text-danger">Chi tiết sản phẩm</strong>
+                </div>
+
+                <div class="col-md-6 text-end">
+                    <a href="@Url.Action("Index", "Category")" class="btn btn-sm btn-success">
+                        Quay về danh sách
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-3">
+            <dl class="dl-horizontal">
+                <dt>
+                    Tên giày
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    Loại giày
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CatName)
+                </dd>
+
+                <dt>
+                    Hình sản phẩm
+                </dt>
+
+                <dd>
+                    <img src="~/Public/img/@Html.DisplayFor(model => model.Img)" class="img-fluid" />
+                </dd>
+
+                <dt>
+                   Số lượng
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Number)
+                </dd>
+
+                <dt>
+                    Giá tiền
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+
+                <dt>
+                    Ngày tạo loại sản phẩm này
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Create_At)
+                </dd>
+
+               
+                <dt>
+                    Ngày cập nhật loại giày gần nhất
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Updated_At)
+                </dd>
+
+                <dt>
+                    Tình trạng
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+            </dl>
+        </div>
+
+    </div>
+
+
+}
+
+
+
+   
